@@ -1,5 +1,5 @@
 from ejercicios.ejercicio1_piramide import mover_hanoi
-"from ejercicios.ejercicio2_determinante import determinante_recursivo"
+from ejercicios.ejercicio2_ import determinante_recursivo
 "from ejercicios.ejercicio3_naves import analizar_naves"
 "from ejercicios.ejercicio4_polinomios import restar_polinomios, dividir_polinomios"
 
@@ -18,10 +18,10 @@ def ejecutar_ejercicio(opcion):
         print("Ejecutando el Puzzle de la Pirámide de Piedras Preciosas...")
         n = 74  # Número de piedras
         mover_hanoi(n, "Columna 1", "Columna 2", "Columna 3")
-    # elif opcion == "2":
-    #     print("Calculando el determinante...")
-    #     matriz_3x3 = [[2, 4, 1], [3, 1, 5], [0, 2, 3]]
-    #     print(f"Determinante (Recursivo): {determinante_recursivo(matriz_3x3)}")
+    elif opcion == "2":
+        print("Calculando el determinante...")
+        matriz_3x3 = [[2, 4, 1], [3, 1, 5], [0, 2, 3]]
+        print(f"Determinante (Recursivo): {determinante_recursivo(matriz_3x3)}")
     # elif opcion == "3":
     #     print("Analizando las naves espaciales...")
     #     analizar_naves()  # Asegúrate de tener los datos en ejercicio3_naves.py
