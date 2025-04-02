@@ -1,7 +1,7 @@
 from ejercicios.ejercicio1_piramide import mover_hanoi
 from ejercicios.ejercicio2_ import determinante_recursivo
-"from ejercicios.ejercicio3_naves import analizar_naves"
-"from ejercicios.ejercicio4_polinomios import restar_polinomios, dividir_polinomios"
+# from ejercicios.ejercicio3_naves import analizar_naves
+# from ejercicios.ejercicio4_polinomios import restar_polinomios, dividir_polinomios
 
 def menu_principal():
     print("=== Menú Principal ===")
@@ -16,7 +16,7 @@ def menu_principal():
 def ejecutar_ejercicio(opcion):
     if opcion == "1":
         print("Ejecutando el Puzzle de la Pirámide de Piedras Preciosas...")
-        n = 74  # Número de piedras
+        n = 3
         mover_hanoi(n, "Columna 1", "Columna 2", "Columna 3")
     elif opcion == "2":
         print("Calculando el determinante...")
