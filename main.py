@@ -10,13 +10,13 @@ def menu_principal():
     print("3. Ejercicio 3: El Gran Rally Espacial")
     print("4. Ejercicio 4: La Matemática de los Encantamientos")
     print("5. Salir")
-    opcion = input("Selecciona una opción (1-5): ")
+    opcion = input("Selecciona una opción (1-5): ").strip()  # Elimina espacios adicionales
     return opcion
 
 def ejecutar_ejercicio(opcion):
     if opcion == "1":
         print("Ejecutando el Puzzle de la Pirámide de Piedras Preciosas...")
-        n = 3
+        n = 3  # Número de discos para las Torres de Hanoi
         mover_hanoi(n, "Columna 1", "Columna 2", "Columna 3")
     elif opcion == "2":
         print("Calculando el determinante...")
@@ -24,12 +24,16 @@ def ejecutar_ejercicio(opcion):
         print(f"Determinante (Recursivo): {determinante_recursivo(matriz_3x3)}")
     elif opcion == "3":
         print("Analizando las naves espaciales...")
-        analizar_naves()  
+        analizar_naves()  # Asegúrate de que esta función esté implementada correctamente
     elif opcion == "4":
         print("Trabajando con polinomios mágicos...")
         polinomio1 = {2: 3, 1: 2, 0: -1}
         polinomio2 = {1: 5, 0: 3}
         print("Resultado de la resta:", restar_polinomios(polinomio1, polinomio2))
+        try:
+            print("Resultado de la división:", dividir_polinomios(polinomio1, polinomio2))
+        except Exception as e:
+            print(f"Error al dividir los polinomios: {e}")
     elif opcion == "5":
         print("¡Hasta luego!")
         exit()
