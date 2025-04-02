@@ -1,6 +1,6 @@
-from ejercicios.ejercicio1_piramide import mover_hanoi
+from ejercicios.ejercicio1 import mover_hanoi
 from ejercicios.ejercicio2_ import determinante_recursivo
-# from ejercicios.ejercicio3_naves import analizar_naves
+from ejercicios.ejercicio3__ import analizar_naves
 # from ejercicios.ejercicio4_polinomios import restar_polinomios, dividir_polinomios
 
 def menu_principal():
@@ -22,9 +22,9 @@ def ejecutar_ejercicio(opcion):
         print("Calculando el determinante...")
         matriz_3x3 = [[2, 4, 1], [3, 1, 5], [0, 2, 3]]
         print(f"Determinante (Recursivo): {determinante_recursivo(matriz_3x3)}")
-    # elif opcion == "3":
-    #     print("Analizando las naves espaciales...")
-    #     analizar_naves()  # Asegúrate de tener los datos en ejercicio3_naves.py
+    elif opcion == "3":
+        print("Analizando las naves espaciales...")
+        analizar_naves()  
     # elif opcion == "4":
     #     print("Trabajando con polinomios mágicos...")
     #     polinomio1 = {2: 3, 1: 2, 0: -1}
