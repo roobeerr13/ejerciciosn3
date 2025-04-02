@@ -1,7 +1,7 @@
 from ejercicios.ejercicio1 import mover_hanoi
 from ejercicios.ejercicio2_ import determinante_recursivo
 from ejercicios.ejercicio3__ import analizar_naves
-# from ejercicios.ejercicio4_polinomios import restar_polinomios, dividir_polinomios
+from ejercicios.ejercicio4___ import restar_polinomios, dividir_polinomios
 
 def menu_principal():
     print("=== Menú Principal ===")
@@ -25,11 +25,11 @@ def ejecutar_ejercicio(opcion):
     elif opcion == "3":
         print("Analizando las naves espaciales...")
         analizar_naves()  
-    # elif opcion == "4":
-    #     print("Trabajando con polinomios mágicos...")
-    #     polinomio1 = {2: 3, 1: 2, 0: -1}
-    #     polinomio2 = {1: 5, 0: 3}
-    #     print("Resultado de la resta:", restar_polinomios(polinomio1, polinomio2))
+    elif opcion == "4":
+        print("Trabajando con polinomios mágicos...")
+        polinomio1 = {2: 3, 1: 2, 0: -1}
+        polinomio2 = {1: 5, 0: 3}
+        print("Resultado de la resta:", restar_polinomios(polinomio1, polinomio2))
     elif opcion == "5":
         print("¡Hasta luego!")
         exit()
