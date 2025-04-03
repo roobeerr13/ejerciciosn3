@@ -5,9 +5,11 @@ from ejercicios.ejercicio3__ import analizar_naves
 from ejercicios.ejercicio4___ import restar_polinomios, dividir_polinomios
 
 def limpiar_pantalla():
+    """Limpia la consola para mostrar solo el menú principal."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def menu_principal():
+    """Muestra el menú principal y devuelve la opción seleccionada."""
     print("=== Menú Principal ===")
     print("1. Ejercicio 1: Puzzle de la Pirámide de Piedras Preciosas")
     print("2. Ejercicio 2: El Secreto de la Cifra Mágica")
@@ -18,6 +20,7 @@ def menu_principal():
     return opcion
 
 def ejecutar_ejercicio(opcion):
+    """Ejecuta el ejercicio seleccionado por el usuario."""
     if opcion == "1":
         n = 74  # Número de piedras
         print(f"\nResolviendo el problema de las Torres de Hanói con {n} piedras...\n")
@@ -31,6 +34,7 @@ def ejecutar_ejercicio(opcion):
             mover_hanoi_resumen(n, "Columna 1", "Columna 2", "Columna 3", contador, limite)
             print(f"\nTotal de movimientos realizados: {contador[0]}")
         
+        # Conclusión del Ejercicio 1
         print("\n¡Felicidades! Has resuelto el Puzzle de la Pirámide de Piedras Preciosas.")
         print("El antiguo tesoro escondido ha sido descubierto.")
     elif opcion == "2":
