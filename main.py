@@ -30,6 +30,8 @@ def ejecutar_ejercicio(opcion):
             limite = 10  # Número de movimientos a mostrar al inicio y al final
             mover_hanoi_resumen(n, "Columna 1", "Columna 2", "Columna 3", contador, limite)
             print(f"\nTotal de movimientos realizados: {contador[0]}")
+        print("\n¡Felicidades! Has resuelto el Puzzle de la Pirámide de Piedras Preciosas.")
+        print("El antiguo tesoro escondido ha sido descubierto.")
     elif opcion == "2":
         matriz_3x3 = [[2, 4, 1], [3, 1, 5], [0, 2, 3]]
         print(f"Determinante (Recursivo): {determinante_recursivo(matriz_3x3)}")
@@ -60,7 +62,7 @@ def mover_hanoi_resumen(n, origen, auxiliar, destino, contador, limite):
 
 if __name__ == "__main__":
     while True:
-        limpiar_pantalla()  # Limpia la consola antes de mostrar el menú
+        limpiar_pantalla() 
         opcion = menu_principal()
         ejecutar_ejercicio(opcion)
-        input("\nPresiona Enter para continuar...")  # Pausa antes de limpiar la pantalla
+        input("\nPresiona Enter para continuar...") 
