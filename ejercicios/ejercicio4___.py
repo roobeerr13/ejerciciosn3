@@ -6,7 +6,7 @@ def dividir_polinomios(p1, p2):
         raise ValueError("No se puede dividir por un polinomio vacío.")
     grado_p1 = max(p1.keys())
     grado_p2 = max(p2.keys())
-    return grado_p1 - grado_p2 
+    return grado_p1 - grado_p2  # Simplificación de división
 
 def eliminar_termino(p, termino):
     if termino in p:
@@ -24,4 +24,3 @@ print("División de polinomios (simplificada):", dividir_polinomios(polinomio1, 
 eliminar_termino(polinomio1, 2)
 print("Polinomio después de eliminar el término 2:", polinomio1)
 print("¿Existe el término 1 en el polinomio1?", existe_termino(polinomio1, 1))
-

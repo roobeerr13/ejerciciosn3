@@ -5,7 +5,6 @@ from ejercicios.ejercicio3__ import analizar_naves
 from ejercicios.ejercicio4___ import restar_polinomios, dividir_polinomios
 
 def limpiar_pantalla():
-    """Limpia la consola para mostrar solo el menú principal."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def menu_principal():
@@ -20,8 +19,17 @@ def menu_principal():
 
 def ejecutar_ejercicio(opcion):
     if opcion == "1":
-        n = 3
-        mover_hanoi(n, "Columna 1", "Columna 2", "Columna 3")
+        n = 74  # Número de piedras
+        print(f"\nResolviendo el problema de las Torres de Hanói con {n} piedras...\n")
+        
+        mostrar_todo = input("¿Deseas ver todos los movimientos? (s/n): ").strip().lower()
+        if mostrar_todo == "s":
+            mover_hanoi(n, "Columna 1", "Columna 2", "Columna 3")
+        else:
+            contador = [0]  # Contador para rastrear los movimientos
+            limite = 10  # Número de movimientos a mostrar al inicio y al final
+            mover_hanoi_resumen(n, "Columna 1", "Columna 2", "Columna 3", contador, limite)
+            print(f"\nTotal de movimientos realizados: {contador[0]}")
     elif opcion == "2":
         matriz_3x3 = [[2, 4, 1], [3, 1, 5], [0, 2, 3]]
         print(f"Determinante (Recursivo): {determinante_recursivo(matriz_3x3)}")
@@ -37,6 +45,18 @@ def ejecutar_ejercicio(opcion):
         exit()
     else:
         print("Opción inválida. Intenta de nuevo.")
+
+def mover_hanoi_resumen(n, origen, auxiliar, destino, contador, limite):
+    if n == 1:
+        contador[0] += 1
+        if contador[0] <= limite or contador[0] > (2**74 - 1) - limite:
+            print(f"Movimiento {contador[0]}: Mover piedra de {origen} a {destino}")
+    else:
+        mover_hanoi_resumen(n - 1, origen, destino, auxiliar, contador, limite)
+        contador[0] += 1
+        if contador[0] <= limite or contador[0] > (2**74 - 1) - limite:
+            print(f"Movimiento {contador[0]}: Mover piedra de {origen} a {destino}")
+        mover_hanoi_resumen(n - 1, auxiliar, origen, destino, contador, limite)
 
 if __name__ == "__main__":
     while True:
