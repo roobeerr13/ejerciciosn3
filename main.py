@@ -1,13 +1,15 @@
 import os
-from ejercicios.ejercicio1 import mover_hanoi
+from ejercicios.ejercicio1 import mover_hanoi, mover_hanoi_resumen
 from ejercicios.ejercicio2_ import determinante_recursivo
 from ejercicios.ejercicio3__ import analizar_naves
 from ejercicios.ejercicio4___ import restar_polinomios, dividir_polinomios
 
 def limpiar_pantalla():
+    """Limpia la consola para mostrar solo el menú principal."""
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def menu_principal():
+    """Muestra el menú principal y devuelve la opción seleccionada."""
     print("=== Menú Principal ===")
     print("1. Ejercicio 1: Puzzle de la Pirámide de Piedras Preciosas")
     print("2. Ejercicio 2: El Secreto de la Cifra Mágica")
@@ -18,6 +20,7 @@ def menu_principal():
     return opcion
 
 def ejecutar_ejercicio(opcion):
+    """Ejecuta el ejercicio seleccionado por el usuario."""
     if opcion == "1":
         n = 74  # Número de piedras
         print(f"\nResolviendo el problema de las Torres de Hanói con {n} piedras...\n")
@@ -30,6 +33,8 @@ def ejecutar_ejercicio(opcion):
             limite = 10  # Número de movimientos a mostrar al inicio y al final
             mover_hanoi_resumen(n, "Columna 1", "Columna 2", "Columna 3", contador, limite)
             print(f"\nTotal de movimientos realizados: {contador[0]}")
+        
+        # Conclusión del Ejercicio 1
         print("\n¡Felicidades! Has resuelto el Puzzle de la Pirámide de Piedras Preciosas.")
         print("El antiguo tesoro escondido ha sido descubierto.")
     elif opcion == "2":
@@ -48,21 +53,9 @@ def ejecutar_ejercicio(opcion):
     else:
         print("Opción inválida. Intenta de nuevo.")
 
-def mover_hanoi_resumen(n, origen, auxiliar, destino, contador, limite):
-    if n == 1:
-        contador[0] += 1
-        if contador[0] <= limite or contador[0] > (2**74 - 1) - limite:
-            print(f"Movimiento {contador[0]}: Mover piedra de {origen} a {destino}")
-    else:
-        mover_hanoi_resumen(n - 1, origen, destino, auxiliar, contador, limite)
-        contador[0] += 1
-        if contador[0] <= limite or contador[0] > (2**74 - 1) - limite:
-            print(f"Movimiento {contador[0]}: Mover piedra de {origen} a {destino}")
-        mover_hanoi_resumen(n - 1, auxiliar, origen, destino, contador, limite)
-
 if __name__ == "__main__":
     while True:
-        limpiar_pantalla() 
+        limpiar_pantalla()  # Limpia la consola antes de mostrar el menú
         opcion = menu_principal()
         ejecutar_ejercicio(opcion)
-        input("\nPresiona Enter para continuar...") 
+        input("\nPresiona Enter para continuar...")  # Pausa antes de limpiar la pantalla
